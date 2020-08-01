@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 
 //https://type.fit/api/quotes
@@ -54,7 +54,7 @@ class App extends React.Component {
 			<h3 id="text" style={{ color : color }}><i class="fa fa-quote-left"> </i> { quote.text }</h3>
 			<p className="By" id="author"> { quote.author ? ('- ' + quote.author) : '' }</p>
 			<div className="btn-group">
-				<a id="tweet-quote" className="btn" href={tweet} target="_blank" style={{ backgroundColor : color }}><i class="fa fa-twitter"></i></a>
+				<a id="tweet-quote" className="btn" href={tweet} target="_blank" rel="noopener noreferrer" style={{ backgroundColor : color }}><i class="fa fa-twitter"></i></a>
 				<button id="new-quote" className="btn" onClick={this.refresh} style={{ backgroundColor : color }}>Next Quote</button>
 			</div>
 			</blockquote> :
