@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-//https://type.fit/api/quotes
+//https://quotes-api-self.vercel.app/quote
 
 class App extends React.Component {
 	colors = ['#16a085', '#27ae60', '#2c3e50', '#f39c12', '#e74c3c', '#9b59b6', '#FB6964', '#342224', "#472E32"];
@@ -21,15 +21,13 @@ class App extends React.Component {
 	}
 	
 	getQuote(){
-		fetch('https://type.fit/api/quotes')
+		fetch('https://quotes-api-self.vercel.app/quote')
         .then(res => res.json())
         .then((data) => {
-			console.log(data);
 		  let num = parseInt(Math.random() * 1000);
 		  let colnum = parseInt(Math.random() * this.colors.length);
-      let quote = data[num];
           this.setState({ 
-		  quote: quote,
+		  quote: data,
 		  loaded: true,
 	  color: this.colors[colnum]
 		  })
